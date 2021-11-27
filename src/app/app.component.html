@@ -3,13 +3,19 @@
 
   <div class="form-group"> 
     <label for="">Fullname  <span class="danger" *ngIf="formData.controls['fullname'].valid == false " >*</span> </label>
-    <input type="text" formControlName="fullname"  ><br>
-
+    <input type="text" formControlName="fullname"  [ngClass]="formData.controls['fullname'].valid == false ? 'control-danger' : 'control-success' " ><br>
     <p>
       <small class="danger" *ngIf="formData.value.fullname =='' "   >this feild is required</small>
     </p>
   </div>
-  
+   <div class="form-group"> 
+    <label for="">Email  <span class="danger" *ngIf="formData.controls['email'].valid == false " >*</span> </label>
+    <input type="text" formControlName="email"  [ngClass]="formData.controls['email'].valid == false ? 'control-danger' : 'control-success' " ><br>
+    <p>
+      <small class="danger" *ngIf="formData.value.email =='' "   >this feild is required</small>
+    </p>
+  </div>
+
   <div class="form-group"> 
     <button type="Submit"  [disabled]= " !formData.valid" >Add</button>
   </div>

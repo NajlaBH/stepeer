@@ -12,7 +12,8 @@ export class AppComponent {
 
 
   formData = new FormGroup({
-    fullname: new FormControl('',Validators.required),  
+    fullname: new FormControl('',Validators.required),
+    email: new FormControl('',[Validators.required, Validators.email]),  
   });
 
 
