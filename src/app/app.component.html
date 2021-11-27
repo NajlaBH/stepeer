@@ -16,6 +16,42 @@
     </p>
   </div>
 
+ <div formGroupName="Adress">
+            <div class="form-group">
+		    <label for=""> Code <span class="danger" *ngIf="code.invalid">*</span> </label>
+                    <input type="text" formControlName="code" [ngClass]="code.invalid ? 'control-danger' : 'control-success' " > 
+    		    <p>
+      			<small class="danger" *ngIf="code.value =='' "   >this feild is required</small>
+    		    </p>
+	    </div>
+
+            <div class="form-group">
+		    <label for="">City <span class="danger" *ngIf="city.invalid ">*</span> </label>
+                    <input type="text" formControlName="city" [ngClass]="city.invalid ? 'control-danger' : 'control-success' " > 
+    		    <p>
+      			<small class="danger" *ngIf="city.value =='' "   >this feild is required</small>
+    		    </p>
+	    </div>
+
+	 <div class="form-group">
+		    <label for="">Address <span class="danger"  *ngIf="address.invalid">*</span> </label>
+                    <input type="text" formControlName="address" [ngClass]="address.invalid ? 'control-danger' : 'control-success' " > 
+    		    <p>
+      			<small class="danger" *ngIf="address.value =='' "   >this feild is required</small>
+    		    </p>
+	    </div>
+  </div>
+
+
+  <div class="form-group"> 
+    <label for="">Phone  <span class="danger" *ngIf="formData.controls['phone'].valid == false " >*</span> </label>
+    <input type="text" formControlName="phone"  [ngClass]="formData.controls['phone'].valid == false ? 'control-danger' : 'control-success' " ><br>
+    <p>
+      <small class="danger" *ngIf="formData.value.phone =='' "   >this feild is required</small>
+    </p>
+  </div>
+ 
+
   <div class="form-group"> 
     <button type="Submit"  [disabled]= " !formData.valid" >Add</button>
   </div>
